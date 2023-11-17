@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Launch images!</title>
+<style type="text/css">
+  h1 {
+    text-align: center;
+  }
+  ul {
+    margin: 0 auto;
+    text-align: center;
+  }
+  li {
+    margin: 16px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  button {
+    padding: 8px;
+    font-size: 1.2em;
+  }
+</style>
+</head>
+<body>
+<h1>Hello, {{ user.name }}! Pick an image to launch below</h1>
+<ul>
+{% for image in images %}
+<li>
+<a href="{{base_url}}launch/{{ image }}">
+    <button>Launch {{ image }}</button>
+</a>
+</li>
+{% endfor %}
+</ul>
+</body>
